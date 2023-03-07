@@ -7,6 +7,7 @@ interface NFTCardProps {
   bestOffer: string
   description: string
   ownerAddress: string
+  onClick?: () => any
 }
 
 const NFTCard: FC<NFTCardProps> = (props) => {

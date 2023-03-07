@@ -26,6 +26,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "react-scripts test",
+    "mocker": "mocker ./mocker/index.js --port 3001",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-modal": "^3.13.1"
+    "@types/react-modal": "^3.13.1",
+    "mocker-api": "^2.9.5"
   }
 }

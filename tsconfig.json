@@ -16,9 +16,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ],
     "paths": {
       "@components/*": ["components/*"],
-      "@apis/*": ["apis/*"]
+      "@apis/*": ["apis/*"],
     }
   },
   "include": ["src"]

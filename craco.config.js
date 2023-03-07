@@ -6,5 +6,13 @@ module.exports = {
       "@components": path.resolve(__dirname, "src/components"),
       "@apis": path.resolve(__dirname, "src/apis"),
     },
+    devServer: {
+      proxy: {
+        "/api": {
+          target: "http://localhost:3001",
+          changeOrigin: true,
+        },
+      },
+    },
   },
 };

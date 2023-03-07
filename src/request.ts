@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 const serviceAxios = axios.create({
   timeout: 5000,
-  baseURL: "",
+  baseURL: "http://localhost:3001",
   withCredentials: false,
 });
 
@@ -42,18 +42,20 @@ serviceAxios.interceptors.response.use(
   }
 );
 
-type HttpResponse = {
+type HttpResponse<T extends any> = {
   code: number;
-  data: any;
+  data: T;
   message: string;
 };
 
-export const request = (config: AxiosRequestConfig) => {
+export const request = <T extends any>(config: AxiosRequestConfig) => {
   return serviceAxios
-    .request<HttpResponse>(config)
+    .request<HttpResponse<T>>(config)
     .then((resp) => {
-      if (resp.data.code === 0) {
+      if (resp.code === 0) {
         return resp.data;
+      } else {
+        return Promise.reject(resp.message);
       }
     })
     .catch((err) => {
