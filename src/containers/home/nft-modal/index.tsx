@@ -39,9 +39,7 @@ const NFTModal: FC<NFTModalProps> = (props) => {
             <div className='nft-modal-meta-info'>Owner: {nft?.ownerName}</div>
             <div className='nft-modal-meta-info'>Owner Address: {formatAddress(nft?.ownerAddress ?? '')}</div>
             <div style={{ height: '1px', backgroundColor: 'rgb(228, 228, 228)', margin: '16px 0' }}></div>
-            <div style={{ marginTop: 'auto' }}>
-              <Button onClick={navigateToOpenSea}>Purchase</Button>
-            </div>
+            <Button onClick={navigateToOpenSea}>Purchase</Button>
           </div>
         </div>
         
