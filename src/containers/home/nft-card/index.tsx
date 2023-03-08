@@ -1,32 +1,28 @@
+import { NFTItem } from '@apis/nft'
 import React, { FC } from 'react'
 import './index.scss'
 
 interface NFTCardProps {
-  thumbnail: string
-  title: string
-  bestOffer: string
-  description: string
-  ownerAddress: string
-  onClick?: () => any
+  nft: NFTItem
+  onClick: (nft: NFTItem) => any
 }
 
 const NFTCard: FC<NFTCardProps> = (props) => {
-  const { title, bestOffer, thumbnail } = props
+  const { nft, onClick } = props
 
   return (
-    <div className='nft-card-container'>
+    <div className='nft-card-container' onClick={() => onClick(nft)}>
       <div className='nft-card-thumbnail' style={{
-        backgroundImage: `url(${thumbnail})`,
+        backgroundImage: `url('${nft.thumbnail}')`,
       }}></div>
       <div className='nft-card-meta'>
-        <div className='nft-card-meta-title'>{title}</div>
-        {
-          bestOffer && (
-            <div className='nft-card-meta-offer'>
-              {bestOffer}
-            </div>
-          )
-        }
+        <div className='nft-card-meta-title'>{nft.title}</div>
+        <div className='nft-card-meta-currentPrice'>
+              {nft.currentPrice}
+          </div>
+          <div className='nft-card-meta-lastsale'>
+              Last sale: {nft.lastSale}
+          </div>
       </div>
     </div>
   )

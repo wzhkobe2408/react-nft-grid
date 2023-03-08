@@ -9,7 +9,7 @@ interface ButtonProps {
 const Button: FC<ButtonProps> = (props) => {
   const { children, onClick } = props;
 
-  return <div onClick={onClick}>{children}</div>;
+  return <div className="c-button" onClick={onClick}>{children}</div>;
 };
 
 export default Button;

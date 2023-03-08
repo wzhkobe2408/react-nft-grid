@@ -23,6 +23,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@apis/*": ["apis/*"],
+      "@helpers/*": ["helpers/*"],
     }
   },
   "include": ["src"]

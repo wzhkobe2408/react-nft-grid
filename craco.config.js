@@ -5,6 +5,7 @@ module.exports = {
     alias: {
       "@components": path.resolve(__dirname, "src/components"),
       "@apis": path.resolve(__dirname, "src/apis"),
+      "@helpers": path.resolve(__dirname, "src/helpers"),
     },
     devServer: {
       proxy: {
